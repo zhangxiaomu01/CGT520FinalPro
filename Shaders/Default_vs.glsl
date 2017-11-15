@@ -5,6 +5,8 @@ uniform float time;
 in vec3 pos_attrib;
 in vec2 tex_coord_attrib;
 in vec3 normal_attrib;
+in vec3 tangent_attrib;
+in vec3 mBitangent_attrib;
 
 out vec2 tex_coord;  
 
