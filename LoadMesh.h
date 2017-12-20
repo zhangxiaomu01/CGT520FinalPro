@@ -6,6 +6,11 @@
 #include <GL/glew.h>
 #include "assimp/Scene.h"
 
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtx/transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 struct MeshData
 {
    unsigned int mVao;
@@ -13,6 +18,9 @@ struct MeshData
    unsigned int mVboNormals;
    unsigned int mVboTexCoords;
    unsigned int mIndexBuffer;
+   unsigned int mTangentSpace;
+   unsigned int mBitangetSpace;
+
    float mScaleFactor; //TODO replace with bounding box
    unsigned int mNumIndices;
    const aiScene* mScene;
@@ -23,7 +31,10 @@ struct MeshData
 
 
 void BufferIndexedVerts(MeshData& meshdata);
+void BufferIndexedVertsParticles(MeshData& meshdata, glm::vec3 pos[]);
 MeshData LoadMesh( const std::string& pFile);
+MeshData LoadParticles(const std::string& pFile, glm::vec3 pos[]);
+
 void GetBoundingBox (const aiScene* scene, aiVector3D* min, aiVector3D* max);
 void GetBoundingBox (const aiMesh* mesh, aiVector3D* min, aiVector3D* max);
 

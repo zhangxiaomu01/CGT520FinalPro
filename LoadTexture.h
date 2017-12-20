@@ -7,6 +7,6 @@
 #include "GL/gl.h"
 
 GLuint LoadTexture(const std::string& fname);
-
+GLuint LoadCube(const std::string& fname);
 
 #endif
